@@ -7,9 +7,9 @@ XTBApi.exceptions
 Exception module
 """
 
-import logging
+#import logging
 
-LOGGER = logging.getLogger('XTBApi.exceptions')
+#LOGGER = logging.getLogger('XTBApi.exceptions')
 
 
 class CommandFailed(Exception):
@@ -24,7 +24,7 @@ class NotLogged(Exception):
     """when not logged"""
     def __init__(self):
         self.msg = "Not logged, please log in"
-        LOGGER.exception(self.msg)
+        #LOGGER.exception(self.msg)
         super().__init__(self.msg)
 
 
@@ -33,7 +33,7 @@ class SocketError(Exception):
     may be the case of server internal error"""
     def __init__(self):
         self.msg = "SocketError, mey be an internal error"
-        LOGGER.error(self.msg)
+        #LOGGER.error(self.msg)
         super().__init__(self.msg)
 
 
@@ -43,5 +43,5 @@ class TransactionRejected(Exception):
         self.status_code = status_code
         self.msg = "transaction rejected with error code {}".format(
             status_code)
-        LOGGER.error(self.msg)
+        #LOGGER.error(self.msg)
         super().__init__(self.msg)
